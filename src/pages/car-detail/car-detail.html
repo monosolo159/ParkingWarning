@@ -1,0 +1,127 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>รายละเอียดรถ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(0)" class="customSection" [style.background-color]="'#ffcd00'" [style.color]="'#000000'">
+            <ion-label stacked>ภาพด้านหน้ารถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageFront)}}" [hidden]="lastImageFront === null">
+              <img src="{{car_pic_front}}" [hidden]="lastImageFront !== null">
+            </ion-thumbnail>
+            <ion-icon name="camera"></ion-icon>
+          </section>
+        </ion-col>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(1)" class="customSection" [style.background-color]="'#ffcd00'" [style.color]="'#000000'">
+            <ion-label stacked>ภาพด้านหลังรถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageBlack)}}" [hidden]="lastImageBlack === null">
+              <img src="{{car_pic_back}}" [hidden]="lastImageBlack !== null">
+
+            </ion-thumbnail>
+            <!-- <h5 [hidden]="lastImageBlack !== null">แตะเพื่อเพิ่มภาพ</h5> -->
+            <ion-icon name="camera"></ion-icon>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(2)" class="customSection" [style.background-color]="'#ffcd00'" [style.color]="'#000000'">
+            <ion-label stacked>ภาพด้านซ้ายรถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageLeft)}}" [hidden]="lastImageLeft === null">
+              <img src="{{car_pic_left}}" [hidden]="lastImageLeft !== null">
+            </ion-thumbnail>
+            <!-- <h5 [hidden]="lastImageLeft !== null">แตะเพื่อเพิ่มภาพ</h5> -->
+            <ion-icon name="camera"></ion-icon>
+          </section>
+        </ion-col>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(3)" class="customSection" [style.background-color]="'#ffcd00'" [style.color]="'#000000'">
+            <ion-label stacked>ภาพด้านขวารถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageRight)}}" [hidden]="lastImageRight === null">
+              <img src="{{car_pic_right}}" [hidden]="lastImageRight !== null">
+            </ion-thumbnail>
+            <!-- <h5 [hidden]="lastImageRight !== null">แตะเพื่อเพิ่มภาพ</h5> -->
+            <ion-icon name="camera"></ion-icon>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_license_plate" type="text"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <select [(ngModel)]="car_province" size="5">
+                <option *ngFor="let item of data_table_province" value="{{item.province_id}}">{{item.province_name}}</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <select [(ngModel)]="car_brand_id" size="5" (ngModelChange)="getCarBrandYear()">
+                <option *ngFor="let item of data_table_brand" value="{{item.car_brand_id}}">{{item.car_brand_name}}</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <select [(ngModel)]="car_year" size="5" (ngModelChange)="getCarModel()">
+                <option *ngFor="let item of data_table_brand_year" value="{{item.car_brand_year_id}}">{{item.car_brand_year}}</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <select [(ngModel)]="car_model_id" size="5">
+                <option *ngFor="let item of data_table_model" value="{{item.car_model_id}}">{{item.car_model_name}}</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <select [(ngModel)]="car_color" size="5">
+                <option *ngFor="let item of data_table_color" value="{{item.car_color_id}}">{{item.car_color_name}}</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50><button ion-button color="parkYellow" (click)="carEdit()" block>บันทึก</button></ion-col>
+        <ion-col width-50><button ion-button color="parkYellow" (click)="carDelete()" block>ลบ</button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>เบอร์โทรฉุกเฉิน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row *ngFor="let row of data_table">
+        <ion-col>
+          <section>
+            <!-- <ion-item no-lines> -->
+            <ion-row>
+              <ion-col width-80>
+                <div class="item-text-center item-text-wrap">{{row.emergency_phone_name}}</div>
+                <div class="item-text-center item-text-wrap">{{row.emergency_phone_number}}</div>
+                <!-- <div class="item-text-center item-text-wrap">{{row.emergency_phone_name}}</div> -->
+              </ion-col>
+              <ion-col width-20>
+                <a button href="tel:{{row.emergency_phone_number}}" item-right>
+                  <ion-icon color="parkYellow" name="call"></ion-icon>
+                </a>
+              </ion-col>
+            </ion-row>
+            <!-- </ion-item> -->
+          </section>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "141918096663",
+    "firebase_url": "https://parking-warning-d5b41.firebaseio.com",
+    "project_id": "parking-warning-d5b41",
+    "storage_bucket": "parking-warning-d5b41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141918096663:android:21a3ad8b36f2aaba",
+        "android_client_info": {
+          "package_name": "com.esanstudio.parkingwarning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141918096663-f8ts168o3ebv2nt6l3jnnpdgqg97qb7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.esanstudio.parkingwarning",
+            "certificate_hash": "809112950e06bdb691dd9515c824782813c72da0"
+          }
+        },
+        {
+          "client_id": "141918096663-m7tbhtvcet8k3b3ajmmc83sc08ffcc24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxlTxpeBW_tahQ94cr5_cPZX_Al3VvvO8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141918096663-m7tbhtvcet8k3b3ajmmc83sc08ffcc24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

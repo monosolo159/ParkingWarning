@@ -1,0 +1,32 @@
+article {
+    .article-background{
+        background-size: cover;
+        .article-title {
+            color: #fff;
+            text-align: left;
+            width: 50%;
+            h1 {
+                font-size: 5rem;
+                word-wrap: normal;
+            }
+        }
+    }
+    .has-content {
+        > div {
+            height: 100%;
+            section {
+                padding-top: 30px;
+                height: 100%;
+                overflow-y:scroll;
+                text-align: left;
+                .first {
+                    float: left;
+                    font-size: 80px;
+                    line-height: 1;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+

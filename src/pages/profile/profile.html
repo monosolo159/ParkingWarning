@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>ข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+
+    <ion-grid>
+      <ion-col>
+        <section>
+          <ion-row style="text-align:center">
+            <ion-col width-50 offset-25>
+              <section class="image" (click)="presentActionSheet()" [ngStyle]="{'background-image': 'url(' + user_photo + ')'}">
+                <!-- <ion-thumbnail class="round-image "> -->
+                <!-- <img src="{{user_photo}}" style="width: 100%" [hidden]="user_photo===null"> -->
+                <!-- <img src="{{linkPicProfile}}{{user_photo}}" style="width: 100%" [hidden]="user_photo===null"> -->
+
+                <!-- </ion-thumbnail> -->
+                <h5 [hidden]="user_photo!==null"><img src="assets/img/template/logo.png"></h5>
+              </section>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+
+            <ion-item>
+              <hr>
+              <p>ชื่อ : {{user_fullname}}</p>
+              <p>เพศ : {{user_sex}}</p>
+              <p>อีเมล : {{user_email}}</p>
+              <p>เบอร์โทรหลัก : {{user_phone}}</p>
+              <p>เบอร์โทรรอง : {{user_phone2}}</p>
+              <p>ยืนยันด้วยอีเมล : {{user_active}}</p>
+
+              <hr>
+              <a button (click)="profileSetting()" color="parkYellow" ion-button default full>ตั้งค่า</a>
+              <a button (click)="profileEdit()" color="parkYellow" ion-button default full>แก้ไขข้อมูลส่วนตัว</a>
+              <a button (click)="passwordEdit()" color="parkYellow" ion-button default full>แก้ไขรหัสผ่าน</a>
+              <a button (click)="logout()" color="danger" ion-button default full>ออกจากระบบ</a>
+            </ion-item>
+
+          </ion-row>
+
+        </section>
+      </ion-col>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

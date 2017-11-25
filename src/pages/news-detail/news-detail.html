@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>รายละเอียดข่าว</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-list>
+        <ion-row *ngFor="let row of data_table_myNews">
+          <ion-col>
+            <section>
+              <ion-row>
+                <ion-col>
+                  <ion-item text-wrap>
+                    <img src="{{linkPic}}{{row.news_pic}}">
+                    <!-- <p>{{row.news_pic}}</p> -->
+                    <p>{{row.news_name}}</p>
+
+                    <div [innerHTML]="'<p>' + row.news_detail + '</p>'"></div>
+                    <p>{{row.news_date_add|amTimeAgo}}</p>
+                    <!-- <p>{{row.news_date_end}}</p> -->
+                    <div *ngIf="row.news_value!=0">
+                      <p>{{row.news_count}}/{{row.news_value}}</p>
+                    </div>
+                    <p><a href="tel:{{row.news_phone}}">{{row.news_phone}}</a></p>
+                    <p><a href="{{row.news_line}}">{{row.news_line}}</a></p>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item text-wrap>
+                    <button item-left *ngIf="row.news_user_status == 0 && row.news_count<=row.news_value && row.news_value!=0" (click)="activeMyNews(row.news_user_id)" color="parkYellow" ion-button small>รับสิทธิ์</button>
+                    <button item-left *ngIf="row.news_user_status == 1 && row.news_value!=0" color="parkYellow" disabled ion-button small outline>รับสิทธิ์</button>
+                    <a button item-left *ngIf="row.news_phone !=null " href="tel:{{row.news_phone}}" color="parkYellow" ion-button small>โทร</a>
+                    <a button item-left *ngIf="row.news_line !='' " href="{{row.news_line}}" color="parkYellow" ion-button small>ไลน์</a>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </section>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

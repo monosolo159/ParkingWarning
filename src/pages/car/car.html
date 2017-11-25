@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="parkYellow">
+    <ion-title>รายการรถของฉัน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters">
+  <ion-fab bottom right>
+    <button ion-fab color="parkOrange" (click)="addCar()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-item-group class="people-group">
+    <ion-grid>
+
+      <ion-row *ngFor="let row of data_table" style="padding-top:1%;">
+        <section (click)="carDetail(row.car_id)" [style.background-image]="'url(' + linkPic+ row.car_pic_front+ ')'">
+          <ion-item no-lines>
+            <ion-row class="customDetail">
+              <ion-col width-75>
+                <p>{{row.car_brand_name}} - {{row.car_model_name}}</p>
+              </ion-col>
+              <ion-col width-25>
+                <p>{{row.car_license_plate}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </section>
+      </ion-row>
+
+      <!-- <ion-row *ngFor="let row of data_table">
+        <section (click)="carDetail(row.car_id)">
+          <ion-item no-lines>
+            <ion-row>
+              <ion-col width-33>
+                <img src="{{linkPic}}{{row.car_pic_front}}">
+              </ion-col>
+              <ion-col width-67>
+                <p>ทะเบียน : {{row.car_license_plate}}</p>
+                <p>จังหวัด : {{row.province_name}}</p>
+                <p>ยี่ห้อ : {{row.car_brand_name}}</p>
+                <p>ปี : {{row.car_brand_year}}</p>
+                <p>รุ่น : {{row.car_model_name}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </section>
+      </ion-row> -->
+
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

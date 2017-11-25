@@ -1,0 +1,82 @@
+page-car {
+  .customDetail {
+    border: 0.55px solid #ffcd00;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 30%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+
+    ion-col {
+      padding-top: 8px;
+    }
+    // padding-top: 30%;
+    // padding-bottom: 2%;
+  }
+
+  .masters {
+    // background-color: #6A6A6A;
+    background-image: url('../assets/img/template/bg8.png');
+    // opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .blog {
+    &.item-block {
+      background-color: transparent;
+      border-bottom: 0.55px solid #c8c7cc;
+
+      .item-inner {
+        border: none;
+      }
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .item-divider {
+    ion-label {
+      color: #93a0b3;
+      margin-bottom: 0;
+    }
+  }
+
+  .people-group {
+    section {
+      border-radius: 10px;
+      background-color: transparent;
+      // background-color: #fff;
+      // opacity: 0.8;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      color: #ffcd00;
+      box-shadow: 0 0 3px rgba(0,0,0,0.15);
+      border: 0.55px solid #ffcd00;
+
+      ion-item {
+        // background-color: #fff;
+        background-color: transparent;
+
+        p {
+          color: #ffcd00;
+          // padding-top: 10px;
+        }
+      }
+
+      ion-label {
+        margin-bottom: 0;
+      }
+
+      button {
+        box-shadow: none;
+        border-top: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+      }
+    }
+  }
+}

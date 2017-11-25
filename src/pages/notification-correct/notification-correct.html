@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>ระยะเวลาในการแก้ไข</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-datetime displayFormat="HH:mm:ss" [(ngModel)]="notification_date_correct"></ion-datetime>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+
+          <ion-col width-50 offset-25>
+            <button *ngIf="notification_date_correct==NULL" ion-button color="parkYellow" (click)="carActiveWarning()" disabled block>ยืนยัน</button>
+            <button *ngIf="notification_date_correct!=NULL" ion-button color="parkYellow" (click)="carActiveWarning()" block>ยืนยัน</button>
+          </ion-col>
+
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-item-group>
+
+
+</ion-content>

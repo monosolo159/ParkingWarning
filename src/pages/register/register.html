@@ -1,0 +1,87 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>สมัครสมาชิก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_fullname" type="text" placeholder="ชื่อ-นามสกุล"></ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+
+            <!-- </ion-item> -->
+            <select [(ngModel)]="user_sex" size="5">
+                <option selected="selected" disabled="disabled" value="-1">เพศ</option>
+                <option value="0">ชาย</option>
+                <option value="1">หญิง</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_email" type="email" placeholder="อีเมลจริง(ใช้สำหรับเข้าระบบ)"></ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_phone" type="text" placeholder="เบอร์โทร"></ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_password" type="password" placeholder="รหัสผ่าน"></ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50 offset-25><button ion-button color="parkYellow" (click)="Register()" block>สมัครสมาชิก</button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

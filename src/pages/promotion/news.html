@@ -1,0 +1,96 @@
+<!--
+Generated template for the Category page.
+
+See http://ionicframework.com/docs/v2/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>โปรโมชั่น</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content  class="masters" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()"> -->
+<ion-content  class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+
+      <!-- <ion-row>
+        <ion-col>
+          <section>
+            <div padding>
+              <ion-segment [(ngModel)]="promotions">
+                <ion-segment-button value="MyPromotion" (click)="reloadData()">
+                  โปรโมชั่นของฉัน
+                </ion-segment-button>
+                <ion-segment-button value="AllPromotion" (click)="reloadData()">
+                  โปรโมชั่นทั้งหมด
+                </ion-segment-button>
+              </ion-segment>
+            </div>
+          </section>
+        </ion-col>
+      </ion-row> -->
+
+
+      <ion-list>
+      <!-- <ion-list *ngSwitchCase="'MyPromotion'"> -->
+        <ion-row *ngFor="let row of data_table_myPromotion" >
+          <ion-col>
+            <section>
+              <ion-row>
+                <ion-col width-25>
+                  <img src="assets/img/template/logo1.png">
+                </ion-col>
+                <ion-col width-75>
+                  <ion-item>
+                    <!-- <ion-item no-lines> -->
+                      <p>{{row.news_name}}</p>
+                      <p>{{row.news_detail}}</p>
+                      <!-- <p>{{row.news_user_date}}</p> -->
+                    <!-- </ion-item> -->
+                    <!-- <ion-col offset-50>
+                      <button *ngIf="row.promotion_user_status == 0" (click)="addMyPromotion(row.promotion_id)" color="parkYellow" ion-button small>รับสิทธิ์</button>
+                      <button *ngIf="row.promotion_user_status == 1" (click)="addMyPromotion(row.promotion_id)" color="parkYellow" disabled ion-button small outline><ion-icon name="checkmark-circle"> </ion-icon> รับสิทธิ์</button>
+                    </ion-col> -->
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <button item-left *ngIf="row.news_user_status ==1 " color="parkYellow" disabled ion-button small outline><ion-icon name="checkmark-circle"> </ion-icon>รับสิทธิ์</button>
+                  <a button item-left *ngIf="row.news_phone !=null " href="tel:{{row.news_phone}}" color="parkYellow" ion-button small>โทร</a>
+                  <a button item-left *ngIf="row.news_line !='' " href="{{row.news_line}}" color="parkYellow" ion-button small>ไลน์</a>
+                </ion-col>
+              </ion-row>
+            </section>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+      <!-- <ion-list *ngSwitchCase="'AllPromotion'">
+        <ion-row *ngFor="let row of data_table_allPromotion">
+          <ion-col>
+            <section>
+                <ion-item>
+                  <ion-item no-lines>
+                    <p>{{row.promotion_name}}</p>
+                    <hr>
+                    <p>{{row.promotion_detail}}</p>
+                    <p>{{row.promotion_date}}</p>
+                    <p>{{row.promotion_value}}</p>
+                  </ion-item>
+                  <button *ngIf="row.promotion_value > 0" (click)="addMyPromotion(row.promotion_id)" type="button" color="primery" ion-button full>รับสิทธิ์</button>
+                </ion-item>
+            </section>
+          </ion-col>
+        </ion-row>
+      </ion-list> -->
+
+
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

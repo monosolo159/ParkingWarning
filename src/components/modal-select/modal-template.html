@@ -1,0 +1,12 @@
+<ion-content padding>
+    <ion-list-header>
+        <h2>{{title}}</h2>
+        <button (click)="close()">Close</button>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item *ngFor="#item of options" (click)="itemSelected(item)">
+        {{item}}
+      </ion-item>
+    </ion-list>
+</ion-content>`

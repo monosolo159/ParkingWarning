@@ -1,0 +1,147 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>รายละเอียดรถ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group" *ngFor="let row of data_table_car">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50 offset-25>
+          <section>
+            <ion-thumbnail>
+              <img src="{{linkPic}}{{row.car_pic_front}}" [hidden]="row.car_pic_front === ''">
+            </ion-thumbnail>
+            <h5 [hidden]="row.car_pic_front !== ''">ไม่มีภาพ</h5>
+          </section>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col width-100>
+
+          <ion-row width-100>
+
+            <ion-col>
+              <section>
+                <ion-input [disabled]="true" type="text" value="{{row.car_license_plate}}"></ion-input>
+              </section>
+            </ion-col>
+
+            <ion-col>
+              <!-- <section> -->
+              <a *ngIf="(checkphone1==1 && phoneopen==1)" class="btncus" button item-left href="tel:{{phone}}" color="parkYellow" ion-button>เบอร์โทรหลัก</a>
+              <!-- </section> -->
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row width-100>
+
+            <ion-col>
+              <section>
+                <ion-input [disabled]="true" type="text" value="{{row.province_name}}"></ion-input>
+              </section>
+            </ion-col>
+
+            <ion-col>
+              <!-- <section> -->
+              <a *ngIf="(checkphone2==1 && phoneopen==1)" class="btncus" button item-left href="tel:{{phone2}}" color="parkYellow" ion-button>เบอร์โทรรอง</a>
+              <!-- </section> -->
+            </ion-col>
+
+          </ion-row>
+
+        </ion-col>
+
+        <!-- <ion-col width-50 *ngFor="let item of data_table_phone">
+
+          <ion-row width-100 *ngIf="(item.user_phone !=null || item.user_phone !='') && item.user_phone_open==1">
+            <a class="btncus" button item-left href="tel:{{item.user_phone}}" color="parkYellow" ion-button>เบอร์โทรหลัก</a>
+          </ion-row>
+
+          <ion-row width-100 *ngIf="(item.user_phone !=null || item.user_phone !='') && item.user_phone_open==0">
+            <a class="btncus" button item-left href="tel:{{item.user_phone}}" color="parkYellow" disabled ion-button outline>เบอร์โทรหลัก</a>
+          </ion-row>
+
+          <ion-row width-100 *ngIf="(item.user_phone2 !=null || item.user_phone !='') && item.user_phone_open==1">
+            <a class="btncus" button item-left href="tel:{{item.user_phone2}}" color="parkYellow" ion-button>เบอร์โทรรอง</a>
+          </ion-row>
+
+          <ion-row width-100 *ngIf="(item.user_phone2 !=null || item.user_phone !='') && item.user_phone_open==0">
+            <a class="btncus" button item-left href="tel:{{item.user_phone2}}" color="parkYellow" disabled ion-button outline>เบอร์โทรรอง</a>
+          </ion-row>
+
+        </ion-col> -->
+      </ion-row>
+
+
+
+      <!-- <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [disabled]="true" type="text" value="{{row.car_brand_name}}"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [disabled]="true" type="text" value="{{row.car_model_name}}"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [disabled]="true" type="text" value="{{row.car_year}}"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [disabled]="true" type="text" value="{{row.car_color}}"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row> -->
+
+      <!-- <ion-row responsive-sm wrap> -->
+      <!-- <ion-row>
+
+        <ion-col width-33 *ngFor="let item of data_table_warning">
+          <section>
+            <ion-thumbnail (click)="carConfirmAddWarning(item.warning_list_id,item.warning_list_name)">
+              <img src="{{linkPicNoti}}{{item.warning_list_id}}.jpg">
+            </ion-thumbnail>
+            <ion-label stacked>{{item.warning_list_name}}</ion-label>
+          </section>
+        </ion-col>
+
+      </ion-row> -->
+
+      <ion-row>
+        <ion-slides spaceBetween="10" slidesPerView="3">
+
+          <ion-slide *ngFor="let item of data_table_warning">
+            <section>
+              <ion-thumbnail (click)="carConfirmAddWarning(item.warning_list_id,item.warning_list_name)">
+                <img src="{{linkPicNoti}}{{item.warning_list_id}}.jpg">
+              </ion-thumbnail>
+              <ion-label stacked>{{item.warning_list_name}}</ion-label>
+            </section>
+          </ion-slide>
+
+        </ion-slides>
+      </ion-row>
+
+
+    </ion-grid>
+  </ion-item-group>
+
+
+</ion-content>

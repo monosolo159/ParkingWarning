@@ -1,0 +1,113 @@
+<!--
+  Generated template for the Register page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>แก้ไขข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <!-- <ion-refresher >
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher> -->
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_fullname" type="text" placeholder="ชื่อ-นามสกุล">{{user_fullname}}</ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_email" type="email" placeholder="อีเมล">{{user_email}}</ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+
+            <!-- </ion-item> -->
+            <select [(ngModel)]="user_sex" size="5">
+                <!-- <option selected="selected" disabled="disabled" value="-1">เพศ</option> -->
+                <option value="0">ชาย</option>
+                <option value="1">หญิง</option>
+            </select>
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_phone" type="text" placeholder="เบอร์โทร">{{user_phone}}</ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+
+            <!-- <ion-item> -->
+            <!-- <ion-label stacked>ชื่อผู้ใช้</ion-label> -->
+            <ion-input [(ngModel)]="user_phone2" type="text" placeholder="เบอร์โทร2">{{user_phone2}}</ion-input>
+            <!-- </ion-item> -->
+
+          </section>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <hr>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="user_password" type="text" placeholder="Password"></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-50 offset-25><button ion-button color="parkYellow" (click)="Update()" block>บันทึก</button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

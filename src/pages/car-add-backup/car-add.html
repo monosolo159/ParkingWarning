@@ -1,0 +1,100 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>เพิ่มรถ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(0)">
+            <ion-label stacked>ภาพด้านหน้ารถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageFront)}}" [hidden]="lastImageFront === null">
+            </ion-thumbnail>
+            <h5 [hidden]="lastImageFront !== null">แตะเพื่อเพิ่มภาพ</h5>
+          </section>
+        </ion-col>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(1)">
+            <ion-label stacked>ภาพด้านหลังรถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageBlack)}}" [hidden]="lastImageBlack === null">
+            </ion-thumbnail>
+            <h5 [hidden]="lastImageBlack !== null">แตะเพื่อเพิ่มภาพ</h5>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(2)">
+            <ion-label stacked>ภาพด้านซ้ายรถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageLeft)}}" [hidden]="lastImageLeft === null">
+            </ion-thumbnail>
+            <h5 [hidden]="lastImageLeft !== null">แตะเพื่อเพิ่มภาพ</h5>
+          </section>
+        </ion-col>
+        <ion-col width-50>
+          <section (click)="presentActionSheet(3)">
+            <ion-label stacked>ภาพด้านขวารถ</ion-label>
+            <ion-thumbnail>
+              <img src="{{pathForImage(lastImageRight)}}" [hidden]="lastImageRight === null">
+            </ion-thumbnail>
+            <h5 [hidden]="lastImageRight !== null">แตะเพื่อเพิ่มภาพ</h5>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_license_plate" type="text" placeholder="ป้ายทะเบียน เช่น กข 1234" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_province" type="text" placeholder="จังหวัดของป้ายทะเบียน เช่น ขอนแก่น" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_brand_id" type="text" placeholder="ยี่ห้อรถ เช่น NISSAN" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_model_id" type="text" placeholder="รุ่นรถ เช่น NAVARA" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_color" type="text" placeholder="สีรถ เช่น ขาว" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-input [(ngModel)]="car_year" type="text" placeholder="ปีรถ เช่น 2017" value=""></ion-input>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-50 offset-25><button ion-button color="parkYellow" (click)="addCar()" block>บันทึก</button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

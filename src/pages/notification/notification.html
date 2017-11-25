@@ -1,0 +1,121 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>ค้นหา</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-item-group class="people-group">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <!-- <section> -->
+          <div>
+            <ion-segment color="parkOrange" [(ngModel)]="notification">
+              <ion-segment-button value="Search">
+                ค้นหารถ
+              </ion-segment-button>
+              <ion-segment-button value="Notification">
+                แจ้งเตือน
+                <ion-badge *ngIf="countBadge!==0" color="danger">{{countBadge}}</ion-badge>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+          <!-- </section> -->
+        </ion-col>
+      </ion-row>
+
+      <div [ngSwitch]="notification">
+
+
+        <ion-list *ngSwitchCase="'Search'">
+          <ion-row>
+            <ion-col>
+              <section>
+                <ion-input class="customStyle" [(ngModel)]="car_license_plate" type="text" placeholder="กข 1234" [style.text-align]="'center'"></ion-input>
+              </section>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <section>
+                <select [(ngModel)]="car_province" size="5">
+                  <option selected="selected" disabled="disabled" value="0">จังหวัด</option>
+                  <option *ngFor="let item of data_table_province" value="{{item.province_id}}">{{item.province_name}}</option>
+              </select>
+              </section>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+
+              <ion-col width-50 offset-25><button ion-button color="parkYellow" (click)="getSearchCar()" block>ค้นหา</button></ion-col>
+
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngFor="let row of data_table_car" style="padding-top:1%">
+            <section>
+              <ion-item no-lines>
+                <ion-row (click)="addNotification(row.car_id,row.car_user_id)">
+                  <ion-col width-33>
+                    <img src="{{linkPic}}{{row.car_pic_front}}">
+                  </ion-col>
+                  <ion-col width-67>
+                    <p>ทะเบียน : {{row.car_license_plate}}</p>
+                    <p>จังหวัด : {{row.province_name}}</p>
+                    <p>ยี่ห้อ : {{row.car_brand_name}}</p>
+                    <p>ปี : {{row.car_brand_year}}</p>
+                    <p>รุ่น : {{row.car_model_name}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-item>
+            </section>
+          </ion-row>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'Notification'">
+          <ion-row *ngFor="let row of data_table_notification">
+
+            <ion-col>
+              <section>
+                <ion-item>
+                  <ion-row>
+                    <ion-col width-33 style="text-align:center">
+                      <ion-thumbnail style="text-align:center">
+                        <img src="{{linkPicNoti}}{{row.warning_list_id}}.jpg">
+                      </ion-thumbnail>
+                      <button *ngIf="row.notification_status==0" ion-button color="parkYellow" (click)="activeNotification(row.notification_id)" block>รับทราบ</button>
+                    </ion-col>
+                    <ion-col width-67>
+                      <p>แจ้งเตือน : {{row.warning_list_name}}</p>
+                      <p>ทะเบียน : {{row.car_license_plate}}</p>
+                      <p>ยี่ห้อ : {{row.car_brand_name}}</p>
+                      <p>ปี : {{row.car_brand_year}}</p>
+                      <p>รุ่น : {{row.car_model_name}}</p>
+                      <p>เวลา : {{row.notification_date|amTimeAgo}}</p>
+                    </ion-col>
+                  </ion-row>
+                  <!-- <ion-row>
+                    <button *ngIf="row.notification_status==0" ion-button color="parkYellow" (click)="activeNotification(row.notification_id)" block>รับทราบ</button>
+                  </ion-row> -->
+                </ion-item>
+              </section>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-list>
+      </div>
+
+    </ion-grid>
+  </ion-item-group>
+</ion-content>
+>

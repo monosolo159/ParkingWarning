@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="parkYellow">
+    <ion-title>ตั้งค่า</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>เปิดการโทร</ion-label>
+        <ion-toggle [(ngModel)]="telPhone" (ionChange)="updateItem($event)"></ion-toggle>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
