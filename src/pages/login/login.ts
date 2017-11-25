@@ -25,6 +25,7 @@ export class LoginPage {
     this._OneSignal.getIds()
       .then((ids) => {
         this.user_device_id = JSON.parse(JSON.stringify(ids));
+        console.log(this.user_device_id);
       });
 
     this.storage.get('user_data').then((val) => {
@@ -78,9 +79,9 @@ export class LoginPage {
           //เช็คว่ามีข้อมูลหรือไม่
           if (this.data_table.length > 0) {
 
-            var send_data = { 'user_id': this.data_table[0]['user_id'], 'user_device_id': this.user_device_id['userId'] };
-            var link = this.server.linkServer() + "user_service/updateUser";
-            this.http.post(link, send_data).subscribe(response => { }, error => { });
+            // var send_data = { 'user_id': this.data_table[0]['user_id'], 'user_device_id': this.user_device_id['userId'] };
+            // var link = this.server.linkServer() + "user_service/updateUser";
+            // this.http.post(link, send_data).subscribe(response => { }, error => { });
 
             var arrUser = {
               user_id: this.data_table[0]['user_id'],
