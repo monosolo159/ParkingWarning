@@ -2,27 +2,32 @@
   {
     "latitude": 17.15106291,
     "longitude": 104.15644169,
-    "name": "สกลแกรนพาเรส"
+    "name": "สกลแกรนพาเรส",
+    "description" : "TITLE A"
   },
   {
     "latitude": 17.148705,
     "longitude": 104.15425301,
-    "name": "หมู่บ้านไตรภพ"
+    "name": "หมู่บ้านไตรภพ",
+    "description" : "TITLE B"
   },
   {
     "latitude": 17.14517833,
     "longitude": 104.15584087,
-    "name": "สกลนครพัฒนศึกษา"
+    "name": "สกลนครพัฒนศึกษา",
+    "description" : "TITLE C"
   }
   ,
   {
     "latitude": 17.15793144,
     "longitude": 104.15413499,
-    "name": "ธอส"
+    "name": "ธอส",
+    "description" : "TITLE D"
   },
   {
     "latitude": 17.1521701,
     "longitude": 104.15018678,
-    "name": "----------"
+    "name": "----------",
+    "description" : "TITLE E"
   }
 ]
